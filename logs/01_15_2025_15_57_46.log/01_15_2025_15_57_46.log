@@ -1,0 +1,5 @@
+[ 2025-01-15 15:57:48,486] 12 root -INFO - data ingestion started 
+[ 2025-01-15 15:58:08,361] 58 root -INFO - performed train and test split on the dataframe 
+[ 2025-01-15 15:58:08,408] 18 root -INFO - data ingestion completed 
+[ 2025-01-15 15:58:08,409] 19 root -INFO - data validation started 
+[ 2025-01-15 15:58:08,603] 25 root -INFO - data validation completed 
