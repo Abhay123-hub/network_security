@@ -88,7 +88,7 @@ class DataValidation:
             path_dir = os.path.join(self.validation_config.valid_train_file_path)
             dir_path = os.path.dirname(path_dir)
             os.makedirs(dir_path,exist_ok = True)
-            test_dataframe.to_csv(self.validation_config.valid_test_file_path)
+            test_dataframe.to_csv(self.validation_config.valid_test_file_path,header=True,index=False)
 
             ## finally creating the data validation artifact
             ## which will be containing some information of the result which i got from the above code

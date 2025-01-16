@@ -14,6 +14,8 @@ from networksecurity.logging.logger import logging
 from networksecurity.utils.main_utils.utils3 import save_numpy_array
 from networksecurity.utils.main_utils.utils4 import save_object
 
+
+
 ##now creating data trasnformation class
 class DataTransformation:
     def __init__(self,data_validation_artifact:DataValidationArtifact,
@@ -59,7 +61,7 @@ class DataTransformation:
             processor = self.get_data_transformer_object()
             processor_object = processor.fit(input_feature_train_df)
             transformed_input_feature_train_df = processor_object.transform(input_feature_train_df)
-            processor_object = processor.fit(input_feature_test_df)
+            
             
             transformed_input_feature_test_df = processor_object.transform(input_feature_test_df) ## this is in numpy array format
   
