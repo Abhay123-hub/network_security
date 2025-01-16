@@ -1,0 +1,9 @@
+[ 2025-01-16 11:35:57,960] 13 root -INFO - data ingestion started 
+[ 2025-01-16 11:36:16,452] 57 root -INFO - performed train and test split on the dataframe 
+[ 2025-01-16 11:36:16,513] 19 root -INFO - data ingestion completed 
+[ 2025-01-16 11:36:16,513] 20 root -INFO - data validation started 
+[ 2025-01-16 11:36:16,722] 26 root -INFO - data validation completed 
+[ 2025-01-16 11:36:16,722] 27 root -INFO - Data transformation started 
+[ 2025-01-16 11:36:16,722] 46 root -INFO - Entered initate data transformation 
+[ 2025-01-16 11:36:16,722] 48 root -INFO - starting data transformation 
+[ 2025-01-16 11:36:16,781] 58 root -INFO - getting to data transformation object 
