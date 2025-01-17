@@ -1,0 +1,11 @@
+[ 2025-01-17 15:39:09,389] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK" 
+[ 2025-01-17 15:39:09,398] 107 dagshub -INFO - Accessing as rajputjiabhay3002 
+[ 2025-01-17 15:39:09,974] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/rajputjiabhay3002/network_security "HTTP/1.1 200 OK" 
+[ 2025-01-17 15:39:10,434] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK" 
+[ 2025-01-17 15:39:10,436] 107 dagshub -INFO - Initialized MLflow to track repo "rajputjiabhay3002/network_security" 
+[ 2025-01-17 15:39:10,436] 107 dagshub -INFO - Repository rajputjiabhay3002/network_security initialized! 
+[ 2025-01-17 15:39:15,001] 114 fastapi -ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+ 

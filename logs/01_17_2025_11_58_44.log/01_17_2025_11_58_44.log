@@ -1,0 +1,10 @@
+[ 2025-01-17 11:58:51,073] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK" 
+[ 2025-01-17 11:58:51,084] 107 dagshub -INFO - Accessing as rajputjiabhay3002 
+[ 2025-01-17 11:58:51,714] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/rajputjiabhay3002/network_security "HTTP/1.1 200 OK" 
+[ 2025-01-17 11:58:52,199] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK" 
+[ 2025-01-17 11:58:52,202] 107 dagshub -INFO - Initialized MLflow to track repo "rajputjiabhay3002/network_security" 
+[ 2025-01-17 11:58:52,202] 107 dagshub -INFO - Repository rajputjiabhay3002/network_security initialized! 
+[ 2025-01-17 11:59:27,842] 59 root -INFO - performed train and test split on the dataframe 
+[ 2025-01-17 11:59:28,115] 48 root -INFO - Entered initate data transformation 
+[ 2025-01-17 11:59:28,115] 50 root -INFO - starting data transformation 
+[ 2025-01-17 11:59:28,159] 60 root -INFO - getting to data transformation object 
