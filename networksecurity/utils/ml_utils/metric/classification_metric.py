@@ -14,5 +14,6 @@ def get_classification_metric(y_true,y_pred) ->ClassificationMetricArtifcat:
             recall_score = recall_score_metric,
             precision_score = precision_score_metric
         )
+        return classification_metric
     except Exception as e:
         raise NetworkSecurityException(e,sys)

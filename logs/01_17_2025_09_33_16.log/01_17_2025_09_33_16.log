@@ -1,0 +1,18 @@
+[ 2025-01-17 09:33:23,850] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK" 
+[ 2025-01-17 09:33:23,867] 107 dagshub -INFO - Accessing as rajputjiabhay3002 
+[ 2025-01-17 09:33:24,494] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/rajputjiabhay3002/network_security "HTTP/1.1 200 OK" 
+[ 2025-01-17 09:33:24,968] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK" 
+[ 2025-01-17 09:33:24,972] 107 dagshub -INFO - Initialized MLflow to track repo "rajputjiabhay3002/network_security" 
+[ 2025-01-17 09:33:24,973] 107 dagshub -INFO - Repository rajputjiabhay3002/network_security initialized! 
+[ 2025-01-17 09:33:24,981] 14 root -INFO - Data Ingestion started 
+[ 2025-01-17 09:33:33,224] 59 root -INFO - performed train and test split on the dataframe 
+[ 2025-01-17 09:33:33,273] 20 root -INFO - Data Ingestion completed 
+[ 2025-01-17 09:33:33,274] 21 root -INFO - Data Validation started 
+[ 2025-01-17 09:33:33,469] 27 root -INFO - Data Validation completed 
+[ 2025-01-17 09:33:33,469] 28 root -INFO - Data Transformation started 
+[ 2025-01-17 09:33:33,470] 48 root -INFO - Entered initate data transformation 
+[ 2025-01-17 09:33:33,470] 50 root -INFO - starting data transformation 
+[ 2025-01-17 09:33:33,542] 60 root -INFO - getting to data transformation object 
+[ 2025-01-17 09:33:33,563] 34 root -INFO - Data Transformation completed 
+[ 2025-01-17 09:33:33,563] 36 root -INFO - Model Trainer Pipeline started 
+[ 2025-01-17 09:36:28,272] 41 root -INFO - Model Trainer PipeLine Completed 

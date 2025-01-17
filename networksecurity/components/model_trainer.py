@@ -20,6 +20,11 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import (DecisionTreeClassifier)
 from sklearn.ensemble import (AdaBoostClassifier,GradientBoostingClassifier,
                               RandomForestClassifier)
+import mlflow
+
+import dagshub
+dagshub.init(repo_owner='rajputjiabhay3002', repo_name='network_security', mlflow=True)
+
 
 
 
@@ -32,6 +37,24 @@ class ModelTrainer:
                 self.data_transformation_artifact=data_transformation_artifact
             except Exception as e:
              raise NetworkSecurityException(e,sys)
+        
+        def track_mlflow(self,best_model,ClassificationMetric):
+            try:
+                with mlflow.start_run():
+                    f1_score = ClassificationMetric.f1_score
+                    recall_score = ClassificationMetric.recall_score
+                    precision_score = ClassificationMetric.precision_score
+
+                    mlflow.log_metric("f1_score",f1_score)
+                    mlflow.log_metric("recall_score",recall_score)
+                    mlflow.log_metric("precision_score",precision_score)
+
+                    mlflow.sklearn.log_model(best_model,"model")
+            except Exception as e:
+                raise NetworkSecurityException(e,sys)
+        
+        
+        
         def train_model(self,x_train,y_train,x_test,y_test):
             models = {
                 "Random Forest": RandomForestClassifier(verbose=1),
@@ -50,11 +73,11 @@ class ModelTrainer:
                 # 'criterion':['gini', 'entropy', 'log_loss'],
                 
                 # 'max_features':['sqrt','log2',None],
-                'n_estimators': [8,16,32,128,256]
+                'n_estimators': [8,16,128,256]
             },
             "Gradient Boosting":{
                 # 'loss':['log_loss', 'exponential'],
-                'learning_rate':[.1,.01,.05,.001],
+                'learning_rate':[.01,.05,.001],
                 'subsample':[0.6,0.7,0.75,0.85,0.9],
                 # 'criterion':['squared_error', 'friedman_mse'],
                 # 'max_features':['auto','sqrt','log2'],
@@ -63,7 +86,7 @@ class ModelTrainer:
             "Logistic Regression":{},
             "AdaBoost":{
                 'learning_rate':[.1,.01,.001],
-                'n_estimators': [8,16,32,64,128,256]
+                'n_estimators': [8,16,32,64,]
             }
             
               }
@@ -89,11 +112,15 @@ class ModelTrainer:
             y_train_pred = best_model.predict(x_train)
             y_test_pred = best_model.predict(x_test)
             classification_train_metric = get_classification_metric(y_pred=y_train_pred,y_true=y_train)
+            self.track_mlflow(best_model,classification_train_metric)
             classification_test_metric = get_classification_metric(y_pred=y_test_pred,y_true=y_test)
+            self.track_mlflow(best_model,classification_test_metric)
+            
             ## get the processer from data transformation pipleine
             processor = load_object(self.data_transformation_artifact.transformed_object_file_path)
             model_dir_path = os.path.dirname(self.model_trainer_config.trained_model_file_path)
             os.makedirs(model_dir_path,exist_ok=True)
+            save_object("final_model/model.pkl",best_model)
 
             Network_Model = NetworkModel(processor=processor,model=best_model)
             save_object(self.model_trainer_config.trained_model_file_path,Network_Model)

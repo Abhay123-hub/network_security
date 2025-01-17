@@ -61,6 +61,7 @@ class DataTransformation:
             processor = self.get_data_transformer_object()
             processor_object = processor.fit(input_feature_train_df)
             transformed_input_feature_train_df = processor_object.transform(input_feature_train_df)
+            save_object("final_model/processor.pkl",processor_object)
             
             
             transformed_input_feature_test_df = processor_object.transform(input_feature_test_df) ## this is in numpy array format
